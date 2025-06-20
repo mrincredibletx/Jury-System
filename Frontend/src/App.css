@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #4caf50;
+  --primary-dark: #388e3c;
+  --background: #e8f5e9;
+  --light: #ffffff;
+  --border: #a5d6a7;
+  --shadow: 0 6px 24px rgba(76, 175, 80, 0.15);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body, html, #root {
+  height: 100%;
+  background: linear-gradient(135deg, #d0f8ce, #c8e6c9);
+  color: #333;
+  user-select: none;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 3rem 3.2rem;
+  background: var(--light);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.35s ease;
+}
+
+.app-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(245, 0, 87, 0.25);
+}
+
+.app-container h1 {
+  font-size: 2.6rem;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(255, 64, 129, 0.2);
+}
+
+button {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 64, 129, 0.3);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+  transform: scale(1.06);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+button.delete-profile {
+  background-color: #e53935;
+}
+
+button.delete-profile:hover:not(:disabled) {
+  background-color: #c62828;
+}
+
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  font-size: 1.05rem;
+  border: 2px solid var(--border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: inset 0 2px 6px rgba(255, 105, 180, 0.12);
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.4);
+  outline: none;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  height: 20px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+}
+
+section {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #ffd1dc;
+  scroll-margin-top: 80px;
+}
+
+section h2 {
+  margin-bottom: 1.6rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.6rem;
+  border-bottom: 3px solid #22d862;
+  padding-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.user-list li {
+  background: #fff8fb;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.user-list li:hover {
+  background: #fff0f5;
+  box-shadow: 0 8px 24px rgba(255, 64, 129, 0.18);
+  transform: translateY(-2px);
+}
+
+.user-list li > div:first-child {
+  font-weight: 700;
+  color: #d81b60;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-list li > div:first-child span {
+  color: #4caf50;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-left: 0.6rem;
+}
+
+.user-list li > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.user-list li button {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 64, 129, 0.2);
+}
+
+.user-list li button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.1);
+}
+
+.chat-box {
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fffafc;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.4rem;
+  border: 1.5px solid var(--border);
+  box-shadow: inset 0 1px 5px rgba(255, 105, 180, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #4add0b transparent;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #0bd723;
+  border-radius: 10px;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.message.sent {
+  background-color: var(--primary);
+  color: white;
+  margin-left: auto;
+  text-align: right;
+  box-shadow: 0 6px 18px rgba(255, 64, 129, 0.4);
+}
+
+.message.received {
+  background-color: #fce4ec;
+  color: #333;
+  margin-right: auto;
+  box-shadow: 0 3px 8px rgba(255, 105, 180, 0.2);
+}
+
+.wallet-connect-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  padding: 1.2rem;
+}
+
+.wallet-connect-box {
+  background-color: #fff;
+  padding: 3rem 3.5rem;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(255, 64, 129, 0.3);
+}
+
+.wallet-connect-box h1 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.wallet-connect-box button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.15rem;
+  border-radius: 18px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.wallet-connect-box button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.06);
+}
+
+.wallet-connect-box img {
+  margin-top: 2.4rem;
+  max-width: 160px;
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 480px) {
+  .wallet-connect-box {
+    padding: 2rem 2.5rem;
+  }
+
+  .wallet-connect-box h1 {
+    font-size: 1.6rem;
+  }
+
+  .wallet-connect-box button {
+    font-size: 1rem;
+    padding: 0.85rem;
+  }
+
+  .app-container {
+    margin: 1.5rem 1rem 2.5rem;
+    padding: 2rem 2rem;
+  }
+
+  .app-container h1 {
+    font-size: 2rem;
+  }
+
+  .user-list li {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  button {
+    margin-right: 0.5rem;
+  }
+}
